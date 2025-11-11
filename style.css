@@ -1,23 +1,178 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 50px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-form {
-  display: inline-block;
-  text-align: left;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.calculator-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.calculate-btn:active {
+  transform: translateY(0);
+}
+
+.result {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+  animation: fadeIn 0.5s ease;
+}
+
+.result.hidden {
+  display: none;
+}
+
+.result h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.age-display {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+.age-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.age-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #667eea;
+  line-height: 1;
+}
+
+.age-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.additional-info {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
   margin-top: 20px;
 }
 
-input, textarea {
-  width: 300px;
-  margin-bottom: 10px;
-  padding: 5px;
+.additional-info p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 8px 0;
+  line-height: 1.6;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .calculator-card {
+    padding: 30px 20px;
+  }
+  
+  .age-number {
+    font-size: 2.5rem;
+  }
+  
+  .age-label {
+    font-size: 0.8rem;
+  }
 }
